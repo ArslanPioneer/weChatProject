@@ -1,0 +1,12 @@
+{
+    "pages": [
+        "pages/classic/classic"
+    ],
+    "window": {
+        "navigationBarBackgroundColor":"#eeeeee",
+        "navigationBarTextStyle":"black",
+        "navigationBarTitleText": "测试",
+        "backgroundColor":"#D80000",
+        "enablePullDownRefresh":true
+    }
+}

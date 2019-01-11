@@ -1,0 +1,23 @@
+.container {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items: center;    
+}
+
+.box {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.color1 {
+    background-color: blue;
+}
+
+.color2 {
+    background-color: aquamarine;
+}
+
+.color3 {
+    background-color: brown;
+}
