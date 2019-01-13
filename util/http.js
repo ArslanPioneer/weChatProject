@@ -1,5 +1,9 @@
 import {config} from '../config.js';
-
+const tips={
+  1:'出现了一个默认错误',
+  1005:'appKey无效',
+  3000:'期刊不存在'
+}
 class Http {
     request(params){
         if(!params.method){
@@ -21,6 +25,13 @@ class Http {
             fail:(err)=>{
 
             }
+        })
+    }
+    _show_error(error_code){
+        wx.showToast({
+            title:tips[error_code],
+            icon:'none',
+            duration:2000
         })
     }
 }

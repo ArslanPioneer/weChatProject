@@ -1,5 +1,5 @@
-import { Http } from '../../util/http.js';
-let http=new Http()
+import { ClassicModel } from '../../models/classic';
+let classic=new ClassicModel()
 Page({
 
   /**
@@ -13,20 +13,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(this.data.test);
-    // wx.request({
-    //   url: 'https://www.easy-mock.com/mock/5c398cbb0157fc56d707bda4/weChat/classic/latest',
-    //   success:(res)=>{
-    //     console.log(res);
-    //     console.log(this.data.test);
-    //   }
-    // })
-    http.request({
-      url:'/classic/latest',
-      success:(res)=>{
-        console.log(res);
-      }
-    })
+     classic.getLateList((res)=>{
+       //debugger
+       this.setData({
+         classicData:res
+       })
+     })
+   
   },
 
   /**
