@@ -1,5 +1,7 @@
 import { ClassicModel } from '../../models/classic';
-let classic=new ClassicModel()
+import { LikeModel } from '../../models/like';
+let classicModel=new ClassicModel();
+let likeModel=new LikeModel();
 Page({
 
   /**
@@ -13,15 +15,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-     classic.getLateList((res)=>{
-       //debugger
+    classicModel.getLateList((res)=>{
        this.setData({
          classicData:res
        })
      })
    
   },
-
+  onLike:function(event){
+    let behavior=event.detail.behavior;
+    likeModel.like(behavior, this.data.classicData.id, this.data.classicData.type)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

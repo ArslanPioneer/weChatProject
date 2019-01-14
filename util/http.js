@@ -17,9 +17,10 @@ class Http {
                 'content-type':'application/json'
             },
             success:(res)=>{
+              debugger
                 let code=res.statusCode.toString();
                 if(code.startsWith('2')){
-                    params.success(res.data)
+                    params.success && params.success(res.data)
                 }   
             },
             fail:(err)=>{
