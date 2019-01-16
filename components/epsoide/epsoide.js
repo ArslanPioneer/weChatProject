@@ -5,9 +5,12 @@ Component({
    */
   properties: {
     index:{
-      type:Number,
+      type:String,
       observer:function(newVal,oldVal,changePath){
-        let val=newVal<10?'0'+newVal:newVal
+        let val=newVal<10?'0'+newVal:newVal;
+        this.setData({
+          _index:val
+        })
       }
     },
     
@@ -17,10 +20,23 @@ Component({
    * 组件的初始数据
    */
   data: {
+    months:[
+      '一月',
+      '二月'
+    ],
     year:0,
-    month:''
+    month:'',
+    _index:''
   },
-
+  attached: function(){
+    let date=new Date();
+    let year=date.getFullYear();
+    let month=date.getMonth();
+    this.setData({
+      year:year,
+      month:this.data.months[month]
+    })
+  },
   /**
    * 组件的方法列表
    */
