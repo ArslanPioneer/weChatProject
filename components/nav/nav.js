@@ -24,6 +24,17 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onLeft:function(){
+      if(!this.properties.left){
+        this.triggerEvent('left', {}, {})
+      }
+      
+    },
+    onRight:function() {
+      if(!this.properties.right){
+        this.triggerEvent('right', {}, {})
+      }
+      
+    }
   }
 })
