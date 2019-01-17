@@ -1,0 +1,18 @@
+/* components/nav/nav.wxss */
+.container {
+  width: 590rpx;
+  height: 80rpx;
+  background-color: #f7f7f7;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.icon {
+  width: 80rpx;
+  height: 80rpx;
+}
+.title {
+  font-size:28rpx;
+}
