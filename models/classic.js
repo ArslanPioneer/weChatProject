@@ -9,6 +9,14 @@ class ClassicModel extends Http {
             }
           })
     }
+    getPrevious(index,callback){
+      this.request({
+        url: '/classic/next',
+        success:(res)=>{
+          callback(res)
+        }
+      })
+    }
 } 
 
 export {ClassicModel}

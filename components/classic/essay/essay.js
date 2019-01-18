@@ -1,4 +1,4 @@
-// components/classic/movie/movie.js
+// components/classic/essay/essay.js
 Component({
   /**
    * 组件的属性列表

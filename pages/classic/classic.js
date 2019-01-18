@@ -28,6 +28,19 @@ Page({
     let behavior=event.detail.behavior;
     likeModel.like(behavior, this.data.classicData.id, this.data.classicData.type)
   },
+  onNext:function(event) {
+
+  },
+  onPrevious:function(event) {
+    const index=this.data.classicData.index;
+    classicModel.getPrevious(index,(res)=>{
+      console.log(res);
+      this.setData({
+        classicData:res
+      })
+    })
+
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
