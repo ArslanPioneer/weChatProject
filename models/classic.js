@@ -12,7 +12,6 @@ class ClassicModel extends Http {
     }
     //缓存中寻找，或者向API请求
     getPrevious(index,callback){
-      debugger
       let key = this._getKey(index-1);
       let classic = wx.getStorageSync(key);
       if(!classic){
@@ -28,7 +27,6 @@ class ClassicModel extends Http {
     }
 
   getNext(index, callback) {
-    debugger
     let key=this._getKey(index+1);
     let classic=wx.getStorageSync(key);
     if(!classic){
