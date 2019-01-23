@@ -29,14 +29,24 @@ Page({
     likeModel.like(behavior, this.data.classicData.id, this.data.classicData.type)
   },
   onNext:function(event) {
-
+    let index=this.data.classicData.index;
+    classicModel.getNext(index, (res) => {
+      console.log(res);
+      this.setData({
+        classicData: res,
+        latest: classicModel.isLatest(res.index),
+        first: classicModel.isFirst(res.index)
+      })
+    }) 
   },
   onPrevious:function(event) {
-    const index=this.data.classicData.index;
+    let index=this.data.classicData.index;
     classicModel.getPrevious(index,(res)=>{
       console.log(res);
       this.setData({
-        classicData:res
+        classicData:res,
+        latest:classicModel.isLatest(res.index),
+        first:classicModel.isFirst(res.index)
       })
     })
 
@@ -80,7 +90,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**
