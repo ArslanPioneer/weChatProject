@@ -1,4 +1,4 @@
-const player = wx.getBackgroundAudioManager()
+const mMgr = wx.getBackgroundAudioManager()
 Component({
   /**
    * 组件的属性列表
@@ -9,7 +9,7 @@ Component({
     img:String,
     content:String,
     hidden:Boolean,
-    
+    title:String
   },
   
   /**
@@ -26,11 +26,19 @@ Component({
    */
   methods: {
     onPlay:function(event) {
-      debugger
-      this.setData({
-        playing:!(this.data.playing)
-      })
-      player.src=this.properties.musicSrc
+      if(this.data.playing){
+        this.setData({
+          playing:true
+        })
+        mMgr.src = this.properties.musicSrc;
+        mMgr.title = this.properties.title;
+      }
+      else {
+        this.setData({
+          playing:false
+        })
+        mMgr.pause();
+      }
     }
      
   }
